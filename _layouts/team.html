@@ -1,0 +1,72 @@
+---
+layout: page
+title: Sample Team Layout
+---
+
+<div id="team-page">
+  {% if page.team['employee'] %}
+    <h2>Core Team Members</h2>
+
+    <ul class="team row">
+      {% for person in page.team['employee'] %}
+        <li class="person span3">
+          <a href="/team/{{ person[0] }}">
+            {% if person[1].image %}
+              <img src="{{ person[1].image.url }}" title="{{ person[1].image.title }}" alt="{{ person[1].image.alt }}" width="150" />
+            {% endif %}
+
+            <p>
+              {{ person[1].name }}
+              <br />
+              <small>{{ person[1].role }}</small>
+            </p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if page.team['contractor'] %}
+    <h2>Awesome People We Work With</h2>
+
+    <ul class="team row">
+      {% for person in page.team['contractor'] %}
+        <li class="person span3">
+          <a href="/team/{{ person[0] }}">
+            {% if person[1].image %}
+              <img src="{{ person[1].image.url }}" title="{{ person[1].image.title }}" alt="{{ person[1].image.alt }}" width="150" />
+            {% endif %}
+
+            <p>
+              {{ person[1].name }}
+              <br />
+              <small>{{ person[1].role }}</small>
+            </p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if page.team['alumni'] %}
+    <h2>Alumni</h2>
+
+    <ul class="team row">
+      {% for person in page.team['alumni'] %}
+        <li class="person span3">
+          <a href="/team/{{ person[0] }}">
+            {% if person[1].image %}
+              <img src="{{ person[1].image.url }}" title="{{ person[1].image.title }}" alt="{{ person[1].image.alt }}" width="150" />
+            {% endif %}
+
+            <p>
+              {{ person[1].name }}
+              <br />
+              <small>{{ person[1].role }}</small>
+            </p>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

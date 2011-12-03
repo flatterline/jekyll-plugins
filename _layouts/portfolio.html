@@ -1,0 +1,21 @@
+---
+layout: page
+title: Sample Portfolio Layout
+---
+<div class="span16">
+  <h1>Our Portfolio</h1>
+
+  <ul id="projects">
+    {% for project in page.projects %}
+      <li class="project span5">
+        <a href="/portfolio/{{ project[0] }}">
+          {% if project[1].image %}
+            <img src="{{ project[1].image.url }}" title="{{ project[1].image.title }}" alt="{{ project[1].image.alt }}" />
+          {% endif %}
+
+          <p>{{ project[1].short }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
